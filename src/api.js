@@ -1,20 +1,29 @@
+import _ from "lodash";
+
 export async function handler(event, context) {
-  const { path } = event;
-  const p = `${path.replace("/api/", "")}`;
+  try {
+    const { path } = event;
+    const p = `${path.replace("/api/", "")}`;
 
-  const handlers = {
-    Fibonacci: require("./lib/Fibonacci").handler,
-    ReverseWords: require("./lib/ReverseWords").handler,
-    Token: require("./lib/ReverseWords").handler,
-    TriangleType: require("./lib/TriangleType").handler
-  };
-  const handler = handlers[p];
-  if (handler && typeof handler === "function") {
-    return handler(event, context);
+    console.log(p);
+
+    const handlers = {
+      fibonacci: require("./lib/Fibonacci").handler,
+      reversewords: require("./lib/ReverseWords").handler,
+      token: require("./lib/Token").handler,
+      triangletype: require("./lib/TriangleType").handler
+    };
+    const handler = handlers[_.toLower(p)];
+    console.log(handler);
+    if (handler) {
+      return handler(event, context);
+    }
+
+    throw new Error(`method not allowed: ${JSON.stringify(event, null, 1)}`);
+  } catch (e) {
+    return {
+      statusCode: 500,
+      body: e.message
+    };
   }
-
-  return {
-    statusCode: 500,
-    body: "method not allowed"
-  };
 }
