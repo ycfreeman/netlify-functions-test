@@ -1,7 +1,5 @@
-import _ from "lodash";
-
 const f = a => {
-  return `success ${a}`;
+  return [...a].reverse().join("");
 };
 
 export async function handler(event, context) {
@@ -11,9 +9,12 @@ export async function handler(event, context) {
   if (_.some([sentence], _.isEmpty)) {
     throw new Error(`missing params: ${JSON.stringify(event, null, 1)}`);
   }
+  if (!_.isString(sentence)) {
+    throw new Error(`incorrect param type: ${JSON.stringify(event, null, 1)}`);
+  }
 
   return {
     statusCode: 200,
-    body: f(sentence)
+    body: `${f(sentence)}`
   };
 }
