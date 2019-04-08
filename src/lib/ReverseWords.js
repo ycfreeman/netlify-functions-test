@@ -1,5 +1,8 @@
 const f = a => {
-  return [...a].reverse().join("");
+  return a
+    .split(" ") // split space
+    .map(w => [...w].reverse().join("")) // reverse word
+    .join(" "); // join string
 };
 
 export async function handler(event, context) {
