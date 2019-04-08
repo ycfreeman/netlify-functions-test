@@ -1,4 +1,5 @@
 import _ from "lodash";
+import { createResponse } from "../formatter";
 
 function getSideClassification(a, b, c) {
   //  if all sides are equal
@@ -28,8 +29,10 @@ export async function handler(event, context) {
     throw new Error(`incorrect param type: ${JSON.stringify(event, null, 1)}`);
   }
 
-  return {
-    statusCode: 200,
-    body: `${f(parseInt(a, 10), parseInt(b, 10), parseInt(c, 10))}`
-  };
+  return createResponse(
+    {
+      body: f(parseInt(a, 10), parseInt(b, 10), parseInt(c, 10))
+    },
+    event.headers
+  );
 }

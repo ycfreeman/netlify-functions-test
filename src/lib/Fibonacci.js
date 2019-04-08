@@ -1,5 +1,7 @@
 import _ from "lodash";
 
+import { createResponse } from "../formatter";
+
 function fibonacci(num, memo) {
   memo = memo || {};
 
@@ -28,8 +30,10 @@ export async function handler(event, context) {
     throw new Error(`incorrect param type: ${JSON.stringify(event, null, 1)}`);
   }
 
-  return {
-    statusCode: 200,
-    body: `${f(n)}`
-  };
+  return createResponse(
+    {
+      body: f(n)
+    },
+    event.headers
+  );
 }

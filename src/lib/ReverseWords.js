@@ -1,3 +1,5 @@
+import { createResponse } from "../formatter";
+
 const f = a => {
   return a
     .split(" ") // split space
@@ -16,8 +18,10 @@ export async function handler(event, context) {
     throw new Error(`incorrect param type: ${JSON.stringify(event, null, 1)}`);
   }
 
-  return {
-    statusCode: 200,
-    body: `${f(sentence)}`
-  };
+  return createResponse(
+    {
+      body: f(sentence)
+    },
+    event.headers
+  );
 }
