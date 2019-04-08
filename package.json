@@ -1,0 +1,19 @@
+{
+  "name": "readify-tech-test",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "netlify-lambda serve --config webpack.dev.config.js ./src",
+    "build": "netlify-lambda build --config webpack.functions.config.js ./src",
+    "typecheck": "tsc"
+  },
+  "devDependencies": {
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "prettier": "1.16.4",
+    "typescript": "^3.4.2"
+  },
+  "dependencies": {
+    "netlify-lambda": "^1.4.3"
+  }
+}
