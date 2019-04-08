@@ -3,7 +3,7 @@ import _ from "lodash";
 export async function handler(event, context) {
   try {
     const { path } = event;
-    const p = `${path.replace("/api/", "")}`;
+    const p = _.last(path.split("/")); // just grab last part of path
     const handlers = {
       fibonacci: require("./lib/Fibonacci").handler,
       reversewords: require("./lib/ReverseWords").handler,
@@ -19,9 +19,7 @@ export async function handler(event, context) {
   } catch (e) {
     return {
       statusCode: 400,
-      body: JSON.stringify({
-        message: "The request is invalid."
-      })
+      body: e.message
     };
   }
 }
