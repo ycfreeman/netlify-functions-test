@@ -1,39 +1,12 @@
-import _ from "lodash";
-import { createResponse } from "./formatter";
+/* example using https://github.com/dougmoscrop/serverless-http */
+import serverless from "serverless-http";
+import expressApp from "./app";
 
-export async function handler(event, context) {
-  try {
-    const { path, httpMethod, headers } = event;
-    if (httpMethod !== "GET") {
-      return createResponse(
-        {
-          statusCode: 405,
-          body: `The requested resource does not support http method '${httpMethod}'`
-        },
-        headers
-      );
-    }
-    const p = _.last(path.split("/")); // just grab last part of path
-    const handlers = {
-      fibonacci: require("./lib/Fibonacci").handler,
-      reversewords: require("./lib/ReverseWords").handler,
-      token: require("./lib/Token").handler,
-      triangletype: require("./lib/TriangleType").handler
-    };
-    const handler = handlers[_.toLower(p)];
-    if (handler) {
-      return handler(event, context);
-    }
+// We need to define our function name for express routes to set the correct base path
+const functionName = "api";
 
-    throw new Error(`method not allowed: ${JSON.stringify(event, null, 1)}`);
-  } catch (e) {
-    return createResponse(
-      {
-        statusCode: 400,
-        // body: e.message,
-        body: "The request is invalid."
-      },
-      headers
-    );
-  }
-}
+// Initialize express app
+const app = expressApp(functionName);
+
+// Export lambda handler
+exports.handler = serverless(app);

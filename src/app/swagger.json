@@ -1,0 +1,204 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "KnockKnock.Web",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Fibonacci": {
+      "get": {
+        "tags": [
+          "Fibonacci"
+        ],
+        "summary": "Returns the nth fibonacci number.",
+        "description": "Returns the nth number in the fibonacci sequence.",
+        "operationId": "Fibonacci_Get",
+        "parameters": [
+          {
+            "name": "n",
+            "in": "query",
+            "description": "The index (n) of the fibonacci sequence",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64",
+                  "x-content-type": "application/json"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64",
+                  "x-content-type": "application/json"
+                }
+              }
+            }
+          }
+        },
+        "x-swagger-router-controller": "Fibonacci"
+      }
+    },
+    "/api/ReverseWords": {
+      "get": {
+        "tags": [
+          "ReverseWords"
+        ],
+        "summary": "Reverses the letters of each word in a sentence.",
+        "description": "Reverses the letters of each word in a sentence.",
+        "operationId": "ReverseWords_Get",
+        "parameters": [
+          {
+            "name": "sentence",
+            "in": "query",
+            "description": "A sentence",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "x-content-type": "application/json"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string",
+                  "x-content-type": "application/json"
+                }
+              }
+            }
+          }
+        },
+        "x-swagger-router-controller": "ReverseWords"
+      }
+    },
+    "/api/Token": {
+      "get": {
+        "tags": [
+          "Token"
+        ],
+        "summary": "Your token.",
+        "description": "Your token.",
+        "operationId": "Token_Get",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "uuid",
+                  "example": "00000000-0000-0000-0000-000000000000",
+                  "x-content-type": "application/json"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "uuid",
+                  "example": "00000000-0000-0000-0000-000000000000",
+                  "x-content-type": "application/json"
+                }
+              }
+            }
+          }
+        },
+        "x-swagger-router-controller": "Token"
+      }
+    },
+    "/api/TriangleType": {
+      "get": {
+        "tags": [
+          "TriangleType"
+        ],
+        "summary": "Returns the type of triangle given the lengths of its sides.",
+        "description": "Returns the type of triangle given the lengths of its sides",
+        "operationId": "TriangleType_Get",
+        "parameters": [
+          {
+            "name": "a",
+            "in": "query",
+            "description": "The length of side a",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "b",
+            "in": "query",
+            "description": "The length of side b",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "c",
+            "in": "query",
+            "description": "The length of side c",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32",
+                  "enum": [
+                    0,
+                    1,
+                    2,
+                    3
+                  ],
+                  "x-content-type": "application/json"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32",
+                  "enum": [
+                    0,
+                    1,
+                    2,
+                    3
+                  ],
+                  "x-content-type": "application/json"
+                }
+              }
+            }
+          }
+        },
+        "x-swagger-router-controller": "TriangleType"
+      }
+    }
+  },
+  "components": {}
+}

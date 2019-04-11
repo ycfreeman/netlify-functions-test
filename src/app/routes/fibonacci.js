@@ -1,6 +1,5 @@
+/* eslint-disable no-return-assign,no-param-reassign */
 import _ from "lodash";
-
-import { createResponse } from "../formatter";
 
 function fibonacci(num, memo) {
   memo = memo || {};
@@ -19,21 +18,16 @@ const f = n => {
   return fibonacci(num - 1);
 };
 
-export async function handler(event, context) {
+export default function FibonacciGet(req, res, next) {
   const {
-    queryStringParameters: { n }
-  } = event;
+    query: { n }
+  } = req;
   if (_.some([n], _.isEmpty)) {
-    throw new Error(`missing params: ${JSON.stringify(event, null, 1)}`);
+    next(new Error(`missing params: ${JSON.stringify(req, null, 1)}`));
   }
   if (!_.isNumber(parseInt(n, 10))) {
-    throw new Error(`incorrect param type: ${JSON.stringify(event, null, 1)}`);
+    next(new Error(`incorrect param type: ${JSON.stringify(req, null, 1)}`));
   }
 
-  return createResponse(
-    {
-      body: f(n)
-    },
-    event.headers
-  );
+  res.json(f(n));
 }
