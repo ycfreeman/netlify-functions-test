@@ -43,12 +43,12 @@ export default function FibonacciGet(req, res) {
   }
 
   if (num > 92) {
-    res.status(400).json();
+    res.status(400).json(); // the reference API just seem to return nothing and throw a 400 after 92
     return;
   }
 
   switch (
-    num // special cases
+    num // special cases obtained by brute forcing the reference API
   ) {
     case 82:
       res.json(61305790721611590);
