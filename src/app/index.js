@@ -29,14 +29,23 @@ export default function expressApp(functionName) {
   /* define routes */
 
   router.route("/").all((req, res, next) => {
-    res.status(404).end();
+    res.status(404).json({
+      message: `No HTTP resource was found that matches the request URI '${
+        req.originalUrl
+      }'.`
+    });
   });
 
   router
     .route("/fibonacci")
     .all((req, res, next) => {
       if (req.method !== "GET") {
-        throw new Error("not implemented");
+        res.status(405).json({
+          message: `The requested resource does not support http method '${
+            req.method
+          }'.`
+        });
+        return;
       }
       next();
     })
@@ -82,7 +91,7 @@ export default function expressApp(functionName) {
   });
 
   // Apply express middlewares
-  router.use(cors());
+  app.use(cors());
   router.use(bodyParser.json());
   router.use(bodyParser.urlencoded({ extended: true }));
 

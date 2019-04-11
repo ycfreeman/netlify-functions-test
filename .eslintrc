@@ -1,6 +1,10 @@
 {
   "extends": [
     "airbnb",
-    "prettier"
-  ]
+    "prettier",
+    "plugin:jest/recommended"
+  ],
+  "globals": {
+    "fetch": true
+  }
 }

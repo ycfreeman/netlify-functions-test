@@ -1,0 +1,283 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fibonacci invalid fraction 1`] = `
+Object {
+  "message": "The request is invalid.",
+}
+`;
+
+exports[`fibonacci invalid fraction 2`] = `[Error: Request failed with status code 400]`;
+
+exports[`fibonacci invalid string 1`] = `
+Object {
+  "message": "The request is invalid.",
+}
+`;
+
+exports[`fibonacci invalid string 2`] = `[Error: Request failed with status code 400]`;
+
+exports[`fibonacci methods: delete 1`] = `
+Object {
+  "message": "The requested resource does not support http method 'DELETE'.",
+}
+`;
+
+exports[`fibonacci methods: delete 2`] = `[Error: Request failed with status code 405]`;
+
+exports[`fibonacci methods: get 1`] = `6765`;
+
+exports[`fibonacci methods: head 1`] = `""`;
+
+exports[`fibonacci methods: head 2`] = `[Error: Request failed with status code 405]`;
+
+exports[`fibonacci methods: options 1`] = `
+Object {
+  "message": "The requested resource does not support http method 'OPTIONS'.",
+}
+`;
+
+exports[`fibonacci methods: options 2`] = `[Error: Request failed with status code 405]`;
+
+exports[`fibonacci methods: patch 1`] = `
+Object {
+  "message": "The requested resource does not support http method 'PATCH'.",
+}
+`;
+
+exports[`fibonacci methods: patch 2`] = `[Error: Request failed with status code 405]`;
+
+exports[`fibonacci methods: post 1`] = `
+Object {
+  "message": "The requested resource does not support http method 'POST'.",
+}
+`;
+
+exports[`fibonacci methods: post 2`] = `[Error: Request failed with status code 405]`;
+
+exports[`fibonacci methods: put 1`] = `
+Object {
+  "message": "The requested resource does not support http method 'PUT'.",
+}
+`;
+
+exports[`fibonacci methods: put 2`] = `[Error: Request failed with status code 405]`;
+
+exports[`fibonacci missing param 1`] = `[Error: Request failed with status code 404]`;
+
+exports[`fibonacci success 1`] = `6765`;
+
+exports[`fibonacci text/json 1`] = `6765`;
+
+exports[`fibonacci valid: 0 1`] = `0`;
+
+exports[`fibonacci valid: 1 1`] = `1`;
+
+exports[`fibonacci valid: 2 1`] = `1`;
+
+exports[`fibonacci valid: 3 1`] = `2`;
+
+exports[`fibonacci valid: 4 1`] = `3`;
+
+exports[`fibonacci valid: 5 1`] = `5`;
+
+exports[`fibonacci valid: 6 1`] = `8`;
+
+exports[`fibonacci valid: 7 1`] = `13`;
+
+exports[`fibonacci valid: 8 1`] = `21`;
+
+exports[`fibonacci valid: 9 1`] = `34`;
+
+exports[`fibonacci valid: 10 1`] = `55`;
+
+exports[`fibonacci valid: 11 1`] = `89`;
+
+exports[`fibonacci valid: 12 1`] = `144`;
+
+exports[`fibonacci valid: 13 1`] = `233`;
+
+exports[`fibonacci valid: 14 1`] = `377`;
+
+exports[`fibonacci valid: 15 1`] = `610`;
+
+exports[`fibonacci valid: 16 1`] = `987`;
+
+exports[`fibonacci valid: 17 1`] = `1597`;
+
+exports[`fibonacci valid: 18 1`] = `2584`;
+
+exports[`fibonacci valid: 19 1`] = `4181`;
+
+exports[`fibonacci valid: 20 1`] = `6765`;
+
+exports[`fibonacci valid: 21 1`] = `10946`;
+
+exports[`fibonacci valid: 22 1`] = `17711`;
+
+exports[`fibonacci valid: 23 1`] = `28657`;
+
+exports[`fibonacci valid: 24 1`] = `46368`;
+
+exports[`fibonacci valid: 25 1`] = `75025`;
+
+exports[`fibonacci valid: 26 1`] = `121393`;
+
+exports[`fibonacci valid: 27 1`] = `196418`;
+
+exports[`fibonacci valid: 28 1`] = `317811`;
+
+exports[`fibonacci valid: 29 1`] = `514229`;
+
+exports[`fibonacci valid: 30 1`] = `832040`;
+
+exports[`fibonacci valid: 31 1`] = `1346269`;
+
+exports[`fibonacci valid: 32 1`] = `2178309`;
+
+exports[`fibonacci valid: 33 1`] = `3524578`;
+
+exports[`fibonacci valid: 34 1`] = `5702887`;
+
+exports[`fibonacci valid: 35 1`] = `9227465`;
+
+exports[`fibonacci valid: 36 1`] = `14930352`;
+
+exports[`fibonacci valid: 37 1`] = `24157817`;
+
+exports[`fibonacci valid: 38 1`] = `39088169`;
+
+exports[`fibonacci valid: 39 1`] = `63245986`;
+
+exports[`fibonacci valid: 40 1`] = `102334155`;
+
+exports[`fibonacci valid: 41 1`] = `165580141`;
+
+exports[`fibonacci valid: 42 1`] = `267914296`;
+
+exports[`fibonacci valid: 43 1`] = `433494437`;
+
+exports[`fibonacci valid: 44 1`] = `701408733`;
+
+exports[`fibonacci valid: 45 1`] = `1134903170`;
+
+exports[`fibonacci valid: 46 1`] = `1836311903`;
+
+exports[`fibonacci valid: 47 1`] = `2971215073`;
+
+exports[`fibonacci valid: 48 1`] = `4807526976`;
+
+exports[`fibonacci valid: 49 1`] = `7778742049`;
+
+exports[`fibonacci valid: 50 1`] = `12586269025`;
+
+exports[`fibonacci valid: 51 1`] = `20365011074`;
+
+exports[`fibonacci valid: 52 1`] = `32951280099`;
+
+exports[`fibonacci valid: 53 1`] = `53316291173`;
+
+exports[`fibonacci valid: 54 1`] = `86267571272`;
+
+exports[`fibonacci valid: 55 1`] = `139583862445`;
+
+exports[`fibonacci valid: 56 1`] = `225851433717`;
+
+exports[`fibonacci valid: 57 1`] = `365435296162`;
+
+exports[`fibonacci valid: 58 1`] = `591286729879`;
+
+exports[`fibonacci valid: 59 1`] = `956722026041`;
+
+exports[`fibonacci valid: 60 1`] = `1548008755920`;
+
+exports[`fibonacci valid: 61 1`] = `2504730781961`;
+
+exports[`fibonacci valid: 62 1`] = `4052739537881`;
+
+exports[`fibonacci valid: 63 1`] = `6557470319842`;
+
+exports[`fibonacci valid: 64 1`] = `10610209857723`;
+
+exports[`fibonacci valid: 65 1`] = `17167680177565`;
+
+exports[`fibonacci valid: 66 1`] = `27777890035288`;
+
+exports[`fibonacci valid: 67 1`] = `44945570212853`;
+
+exports[`fibonacci valid: 68 1`] = `72723460248141`;
+
+exports[`fibonacci valid: 69 1`] = `117669030460994`;
+
+exports[`fibonacci valid: 70 1`] = `190392490709135`;
+
+exports[`fibonacci valid: 71 1`] = `308061521170129`;
+
+exports[`fibonacci valid: 72 1`] = `498454011879264`;
+
+exports[`fibonacci valid: 73 1`] = `806515533049393`;
+
+exports[`fibonacci valid: 74 1`] = `1304969544928657`;
+
+exports[`fibonacci valid: 75 1`] = `2111485077978050`;
+
+exports[`fibonacci valid: 76 1`] = `3416454622906707`;
+
+exports[`fibonacci valid: 77 1`] = `5527939700884757`;
+
+exports[`fibonacci valid: 78 1`] = `8944394323791464`;
+
+exports[`fibonacci valid: 79 1`] = `14472334024676220`;
+
+exports[`fibonacci valid: 80 1`] = `23416728348467684`;
+
+exports[`fibonacci valid: 81 1`] = `37889062373143900`;
+
+exports[`fibonacci valid: 82 1`] = `61305790721611590`;
+
+exports[`fibonacci valid: 83 1`] = `99194853094755500`;
+
+exports[`fibonacci valid: 84 1`] = `160500643816367100`;
+
+exports[`fibonacci valid: 85 1`] = `259695496911122600`;
+
+exports[`fibonacci valid: 86 1`] = `420196140727489660`;
+
+exports[`fibonacci valid: 87 1`] = `679891637638612200`;
+
+exports[`fibonacci valid: 88 1`] = `1100087778366101900`;
+
+exports[`fibonacci valid: 89 1`] = `1779979416004714200`;
+
+exports[`fibonacci valid: 90 1`] = `2880067194370816000`;
+
+exports[`fibonacci valid: 91 1`] = `4660046610375530000`;
+
+exports[`fibonacci valid: 92 1`] = `7540113804746346000`;
+
+exports[`fibonacci valid: 93 1`] = `""`;
+
+exports[`fibonacci valid: 93 2`] = `[Error: Request failed with status code 400]`;
+
+exports[`fibonacci valid: 94 1`] = `""`;
+
+exports[`fibonacci valid: 94 2`] = `[Error: Request failed with status code 400]`;
+
+exports[`fibonacci valid: 95 1`] = `""`;
+
+exports[`fibonacci valid: 95 2`] = `[Error: Request failed with status code 400]`;
+
+exports[`fibonacci valid: 96 1`] = `""`;
+
+exports[`fibonacci valid: 96 2`] = `[Error: Request failed with status code 400]`;
+
+exports[`fibonacci valid: 97 1`] = `""`;
+
+exports[`fibonacci valid: 97 2`] = `[Error: Request failed with status code 400]`;
+
+exports[`fibonacci valid: 98 1`] = `""`;
+
+exports[`fibonacci valid: 98 2`] = `[Error: Request failed with status code 400]`;
+
+exports[`fibonacci valid: 99 1`] = `""`;
+
+exports[`fibonacci valid: 99 2`] = `[Error: Request failed with status code 400]`;

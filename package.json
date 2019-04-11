@@ -3,21 +3,29 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "netlify-lambda serve --config webpack.dev.config.js ./src",
+    "start": "netlify-lambda serve --port 80 --config webpack.dev.config.js ./src",
     "build": "netlify-lambda build --config webpack.functions.config.js ./src",
+    "test": "jest",
     "typecheck": "tsc"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "axios": "^0.18.0",
+    "babel-jest": "^24.7.1",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jest": "^22.4.1",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
     "file-loader": "^3.0.1",
+    "jest": "^24.7.1",
+    "portable-fetch": "^3.0.0",
     "prettier": "1.16.4"
   },
   "dependencies": {
+    "bignumber.js": "^8.1.1",
     "body-parser": "^1.18.3",
     "compression": "^1.7.2",
     "cors": "^2.8.4",
@@ -27,5 +35,10 @@
     "netlify-lambda": "^1.4.3",
     "serverless-http": "^1.9.1",
     "swagger-ui-express": "^4.0.2"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "./setupTests.js"
+    ]
   }
 }
