@@ -14,7 +14,7 @@ describe("/", () => {
         url
       });
     } catch (e) {
-      expect(e.response.data).toMatchSnapshot();
+      // expect(e.response.data).toMatchSnapshot();
       expect(e).toMatchSnapshot();
     }
   });

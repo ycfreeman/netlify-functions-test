@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`triangle-type different types: 0, 0, 0 1`] = `"Error"`;
+
+exports[`triangle-type different types: 1, 2, 4 1`] = `"Error"`;
+
+exports[`triangle-type different types: 3, 3, 3 1`] = `"Equilateral"`;
+
+exports[`triangle-type different types: 3, 4, 5 1`] = `"Scalene"`;
+
+exports[`triangle-type different types: 4, 4, 5 1`] = `"Isosceles"`;
+
+exports[`triangle-type fraction 1`] = `
+Object {
+  "message": "The request is invalid.",
+}
+`;
+
+exports[`triangle-type fraction 2`] = `[Error: Request failed with status code 400]`;
+
+exports[`triangle-type limit? 1`] = `"loop stops at 3000000000, 4000000000, 5000000000"`;
+
+exports[`triangle-type limit? 2`] = `[Error: Request failed with status code 400]`;
+
+exports[`triangle-type limit? 3`] = `
+Object {
+  "message": "The request is invalid.",
+}
+`;
+
+exports[`triangle-type limit?: 30, 40, 50 1`] = `"Scalene"`;
+
+exports[`triangle-type limit?: 300, 400, 500 1`] = `"Scalene"`;
+
+exports[`triangle-type limit?: 3000, 4000, 5000 1`] = `"Scalene"`;
+
+exports[`triangle-type limit?: 30000, 40000, 50000 1`] = `"Scalene"`;
+
+exports[`triangle-type limit?: 300000, 400000, 500000 1`] = `"Scalene"`;
+
+exports[`triangle-type limit?: 3000000, 4000000, 5000000 1`] = `"Scalene"`;
+
+exports[`triangle-type limit?: 30000000, 40000000, 50000000 1`] = `"Scalene"`;
+
+exports[`triangle-type limit?: 300000000, 400000000, 500000000 1`] = `"Scalene"`;
+
+exports[`triangle-type methods: delete 1`] = `
+Object {
+  "message": "The requested resource does not support http method 'DELETE'.",
+}
+`;
+
+exports[`triangle-type methods: delete 2`] = `[Error: Request failed with status code 405]`;
+
+exports[`triangle-type methods: get 1`] = `"Scalene"`;
+
+exports[`triangle-type methods: head 1`] = `""`;
+
+exports[`triangle-type methods: head 2`] = `[Error: Request failed with status code 405]`;
+
+exports[`triangle-type methods: options 1`] = `
+Object {
+  "message": "The requested resource does not support http method 'OPTIONS'.",
+}
+`;
+
+exports[`triangle-type methods: options 2`] = `[Error: Request failed with status code 405]`;
+
+exports[`triangle-type methods: patch 1`] = `
+Object {
+  "message": "The requested resource does not support http method 'PATCH'.",
+}
+`;
+
+exports[`triangle-type methods: patch 2`] = `[Error: Request failed with status code 405]`;
+
+exports[`triangle-type methods: post 1`] = `
+Object {
+  "message": "The requested resource does not support http method 'POST'.",
+}
+`;
+
+exports[`triangle-type methods: post 2`] = `[Error: Request failed with status code 405]`;
+
+exports[`triangle-type methods: put 1`] = `
+Object {
+  "message": "The requested resource does not support http method 'PUT'.",
+}
+`;
+
+exports[`triangle-type methods: put 2`] = `[Error: Request failed with status code 405]`;
+
+exports[`triangle-type missing param 1`] = `[Error: Request failed with status code 404]`;
+
+exports[`triangle-type missing param 2`] = `[Error: Request failed with status code 404]`;
+
+exports[`triangle-type missing param 3`] = `[Error: Request failed with status code 404]`;
+
+exports[`triangle-type string 1`] = `
+Object {
+  "message": "The request is invalid.",
+}
+`;
+
+exports[`triangle-type string 2`] = `[Error: Request failed with status code 400]`;
+
+exports[`triangle-type success 1`] = `"Scalene"`;
+
+exports[`triangle-type text/json 1`] = `"Scalene"`;

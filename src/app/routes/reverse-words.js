@@ -1,5 +1,12 @@
 import _ from "lodash";
 
+// walk through each character
+// if not a space, add to array
+// if it's a space stop
+// reverse all characters in array
+// add reversed word to result
+// if it's a space, just add to result
+
 const f = a => {
   return a
     .split(" ") // split space

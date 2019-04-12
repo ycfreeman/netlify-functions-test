@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import compression from "compression";
+import nocache from "nocache";
 
 import fibonacciRoute from "./routes/fibonacci";
 import reverseWordsRoute from "./routes/reverse-words";
@@ -16,9 +17,6 @@ import triangleTypeRoute from "./routes/triangle-type";
 export default function expressApp(functionName) {
   const app = express();
   const router = express.Router();
-
-  // gzip responses
-  router.use(compression());
 
   // Set router base path for local dev
   const routerBasePath =
@@ -55,7 +53,12 @@ export default function expressApp(functionName) {
     .route("/reversewords")
     .all((req, res, next) => {
       if (req.method !== "GET") {
-        throw new Error("not implemented");
+        res.status(405).json({
+          message: `The requested resource does not support http method '${
+            req.method
+          }'.`
+        });
+        return;
       }
       next();
     })
@@ -65,7 +68,12 @@ export default function expressApp(functionName) {
     .route("/token")
     .all((req, res, next) => {
       if (req.method !== "GET") {
-        throw new Error("not implemented");
+        res.status(405).json({
+          message: `The requested resource does not support http method '${
+            req.method
+          }'.`
+        });
+        return;
       }
       next();
     })
@@ -75,7 +83,12 @@ export default function expressApp(functionName) {
     .route("/triangletype")
     .all((req, res, next) => {
       if (req.method !== "GET") {
-        throw new Error("not implemented");
+        res.status(405).json({
+          message: `The requested resource does not support http method '${
+            req.method
+          }'.`
+        });
+        return;
       }
       next();
     })
@@ -91,6 +104,9 @@ export default function expressApp(functionName) {
   });
 
   // Apply express middlewares
+  // gzip responses
+  router.use(compression());
+  router.use(nocache());
   app.use(cors());
   router.use(bodyParser.json());
   router.use(bodyParser.urlencoded({ extended: true }));
