@@ -1,6 +1,5 @@
 /* eslint-disable no-await-in-loop */
 const axios = require("axios");
-const _ = require("lodash");
 
 describe("triangle-type", () => {
   const api = axios.create({

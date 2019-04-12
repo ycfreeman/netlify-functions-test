@@ -1,7 +1,7 @@
 /* eslint-disable no-await-in-loop */
 const axios = require("axios");
 
-describe("reverse-words", () => {
+describe.skip("reverse-words", () => {
   const api = axios.create({
     // baseURL: "https://knockknock.readify.net/api"
     baseURL: "http://localhost/.netlify/functions/api"

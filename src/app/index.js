@@ -24,9 +24,14 @@ export default function expressApp(functionName) {
       ? `/${functionName}`
       : `/.netlify/functions/${functionName}/`;
 
+  // Apply express middlewares
+  // gzip responses
+  router.use(compression());
+  router.use(nocache());
+
   /* define routes */
 
-  router.route("/").all((req, res, next) => {
+  router.route("/").all((req, res) => {
     res.status(404).json({
       message: `No HTTP resource was found that matches the request URI '${
         req.originalUrl
@@ -97,16 +102,13 @@ export default function expressApp(functionName) {
   // Setup routes
   app.use(express.json());
   app.use(routerBasePath, router);
+  // eslint-disable-next-line no-unused-vars
   app.use(function e(err, req, res, next) {
     res.status(400).json({
       message: "The request is invalid."
     });
   });
 
-  // Apply express middlewares
-  // gzip responses
-  router.use(compression());
-  router.use(nocache());
   app.use(cors());
   router.use(bodyParser.json());
   router.use(bodyParser.urlencoded({ extended: true }));

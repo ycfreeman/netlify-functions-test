@@ -1,5 +1,6 @@
 /* eslint-disable no-return-assign,no-param-reassign */
 import _ from "lodash";
+import { isInt } from "../utils";
 
 function fibonacci(num, memo) {
   memo = memo || {};
@@ -17,10 +18,6 @@ const f = n => {
   }
   return fibonacci(num - 1);
 };
-
-function isInt(n) {
-  return n % 1 === 0;
-}
 
 export default function FibonacciGet(req, res) {
   const {
