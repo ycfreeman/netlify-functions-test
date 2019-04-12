@@ -24,7 +24,6 @@
     "prettier": "1.16.4"
   },
   "dependencies": {
-    "bignumber.js": "^8.1.1",
     "body-parser": "^1.18.3",
     "compression": "^1.7.2",
     "cors": "^2.8.4",
@@ -34,8 +33,7 @@
     "lodash": "^4.17.11",
     "netlify-lambda": "^1.4.3",
     "nocache": "^2.0.0",
-    "serverless-http": "^1.9.1",
-    "swagger-ui-express": "^4.0.2"
+    "serverless-http": "^1.9.1"
   },
   "jest": {
     "setupFilesAfterEnv": []
