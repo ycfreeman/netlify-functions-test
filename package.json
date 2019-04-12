@@ -7,7 +7,7 @@
     "build": "netlify-lambda build --config webpack.functions.config.js ./src",
     "test": "jest",
     "monitor": "NODE_TLS_REJECT_UNAUTHORIZED=0 HTTPS_PROXY=http://localhost:8888",
-    "typecheck": "tsc"
+    "lint": "eslint ./src"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",

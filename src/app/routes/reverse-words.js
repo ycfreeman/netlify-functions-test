@@ -27,7 +27,7 @@ const f = v => {
   return sentence + reverseWord(word);
 };
 
-export default function ReverseWordsGet(req, res, next) {
+export default function ReverseWordsGet(req, res) {
   const {
     query: { sentence = "" }
   } = req;
