@@ -45,5 +45,5 @@ export default function TriangleTypeGet(req, res) {
     return;
   }
 
-  res.send(JSON.stringify(f(s[0], s[1], s[2])));
+  res.json(f(s[0], s[1], s[2]));
 }

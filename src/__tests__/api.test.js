@@ -3,7 +3,7 @@ const axios = require("axios");
 describe("/", () => {
   const api = axios.create({
     // baseURL: "https://knockknock.readify.net/api",
-    baseURL: "http://localhost/.netlify/functions/api"
+    baseURL: "http://localhost/api"
   });
 
   const url = "/";

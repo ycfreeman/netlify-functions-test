@@ -2,16 +2,13 @@
 import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
-import compression from "compression";
 import nocache from "nocache";
+import compression from "compression";
 
 import fibonacciRoute from "./routes/fibonacci";
 import reverseWordsRoute from "./routes/reverse-words";
 import tokenRoute from "./routes/token";
 import triangleTypeRoute from "./routes/triangle-type";
-
-// import swaggerUi from "swagger-ui-express";
-// import swaggerDocument from "./swagger.json";
 
 /* My express App */
 export default function expressApp(functionName) {
@@ -19,10 +16,7 @@ export default function expressApp(functionName) {
   const router = express.Router();
 
   // Set router base path for local dev
-  const routerBasePath =
-    process.env.NODE_ENV === "dev"
-      ? `/${functionName}`
-      : `/.netlify/functions/${functionName}/`;
+  const routerBasePath = `/${functionName}`;
 
   // Apply express middlewares
   // gzip responses
@@ -32,11 +26,7 @@ export default function expressApp(functionName) {
   /* define routes */
 
   router.route("/").all((req, res) => {
-    res.status(404).json({
-      message: `No HTTP resource was found that matches the request URI '${
-        req.originalUrl
-      }'.`
-    });
+    res.status(404).end();
   });
 
   router
@@ -110,7 +100,7 @@ export default function expressApp(functionName) {
   });
 
   app.use(cors());
-  router.use(bodyParser.json());
+  router.use(bodyParser.json({ type: "*/json" }));
   router.use(bodyParser.urlencoded({ extended: true }));
 
   return app;
