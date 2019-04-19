@@ -1,10 +1,14 @@
 version: "3.7"
 services:
-  web:
+  dev:
     build: .
     command: npm run dev
     volumes:
       - .:/build
       - /node_modules
+    ports:
+      - "8080:80"
+  prod:
+    build: .
     ports:
       - "8080:80"
