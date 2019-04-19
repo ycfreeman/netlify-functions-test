@@ -7,4 +7,4 @@ services:
       - .:/build
       - /node_modules
     ports:
-      - "80:80"
+      - "8080:80"

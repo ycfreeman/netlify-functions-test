@@ -5,6 +5,7 @@ info:
   title: "KnockKnock.Web"
 schemes:
   - "http"
+  - "https"
 paths:
   /api/Fibonacci:
     get:
